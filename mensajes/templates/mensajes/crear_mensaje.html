@@ -1,0 +1,21 @@
+{% extends 'mensajes/base.html' %}
+
+{% block content %}
+    <h1>Crear Mensaje</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Emisor</label>
+        <select name="emisor">
+            <option value="juan">Juan</option>
+            <option value="maria">Maria</option>
+        </select>
+        <label>Receptor</label>
+        <select name="receptor">
+            <option value="juan">Juan</option>
+            <option value="maria">Maria</option>
+        </select>
+        <label>Contenido</label>
+        <textarea name="contenido"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+{% endblock %}

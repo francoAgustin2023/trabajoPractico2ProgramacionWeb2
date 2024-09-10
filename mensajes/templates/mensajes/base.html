@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tablero de Mensajes{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'crear_mensaje' %}">Crear Mensaje</a></li>
+            <li><a href="{% url 'mensajes_recibidos' %}">Mensajes Recibidos</a></li>
+            <li><a href="{% url 'mensajes_enviados' %}">Mensajes Enviados</a></li>
+            <li><a href="{% url 'eliminar_mensaje' %}">Eliminar Mensaje</a></li>
+        </ul>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

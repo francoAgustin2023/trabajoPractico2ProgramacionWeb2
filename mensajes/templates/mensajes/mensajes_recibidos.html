@@ -1,0 +1,23 @@
+{% extends 'mensajes/base.html' %}
+
+{% block content %}
+    <h1>Mensajes Recibidos</h1>
+    <form method="get">
+        <label for="receptor">Selecciona el receptor:</label>
+        <select name="receptor" id="receptor">
+            <option value="juan">Juan</option>
+            <option value="maria">Maria</option>
+        </select>
+        <button type="submit">Ver Mensajes</button>
+    </form>
+
+    {% if mensajes %}
+        <ul>
+        {% for mensaje in mensajes %}
+            <li><strong>{{ mensaje.emisor }}:</strong> {{ mensaje.contenido }} <em>({{ mensaje.fecha_creacion }})</em></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay mensajes recibidos.</p>
+    {% endif %}
+{% endblock %}
